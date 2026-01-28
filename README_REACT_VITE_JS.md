@@ -8,7 +8,7 @@
 
 ---
 
-# Aлгоритм создания и деплоя проекта на Vite с GitHub Pages
+# Aлгоритм создания и деплоя проекта на REACT Vite с GitHub Pages
 
 ---
 
@@ -24,15 +24,17 @@ ls: Показывает содержимое текущей папки
 1. Создаём новый проект через Vite:
 
 ```bash
-npm create vite@latest my-project
+# npm create vite@latest my-project
+- подходит для всех преоктов на vite, но задаст тебе еще несколько вопросов.
 
-или если  вы хотите развернуть проект непосредственно в той папке, где вы сейчас находитесь (без создания подпапки), используйте точку . вместо имени проекта
+#npm create vite@latest my-app -- --template react
+- создаст проект одной строкой
 
-npm create vite@latest .
+#npm create vite@latest . -- --template react
+если  вы хотите развернуть проект непосредственно в той папке, где вы сейчас находитесь (без создания подпапки), используйте точку . вместо имени проекта
+
 ```
 
-- Выбираем `vanilla` или `vanilla-js` (если чистый JS), либо `vue/react` по
-  желанию.
 - Переходим в папку проекта:
 
 ```bash
@@ -104,10 +106,9 @@ git push -u origin main
 
 ---
 
-## 5️⃣ Создание vite.config.js
+## 5️⃣ Внесение изменений в файл vite.config.js
 
 - **Файл находится в ветке main**, на уровне package.json.
-- Пример для многостраничного проекта (MPA) без `base`:
 
 ```js
 import { defineConfig } from 'vite';
@@ -116,17 +117,7 @@ import { resolve } from 'path';
 export default defineConfig({
   base: '/Practice-Promises-Date-flatpickr-notiflix/',
 
-  // Если многостраничный сайт
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        colorSwitcher: resolve(__dirname, '01-color-switcher.html'),
-        countdownTimer: resolve(__dirname, '02-timer.html'),
-        promiseGenerator: resolve(__dirname, '03-promises.html'),
-      },
-    },
-  },
+  plugins: [react()], // реакт сам его добавил
 });
 ```
 
