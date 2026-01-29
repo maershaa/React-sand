@@ -395,3 +395,99 @@ CSS, отступы, шрифты, форматирование.
 `chore: update project configuration` `chore: add comments and minor code cleanup`
 
 ---
+
+### 10. Рекомендации для проекта
+
+- [1] Установи пакет `normalize.css`, который убирает различия в отображении
+  HTML-элементов между разными браузерами. Это делает базовые стили
+  единообразными, чтобы ваши собственные стили работали предсказуемо и одинаково
+  во всех браузерах.:
+
+```bash
+npm install normalize.css
+В файле main.js импортируем его перед всеми остальными стилями: import 'normalize.css';
+
+```
+
+[2] В проекте у тебя будет:
+
+### eslint.config.js
+
+— для проверки кода (линтинг: ошибки, неиспользуемые переменные, стиль).  
+Создаётся автоматически при `npm create vite@latest` (React template).
+
+---
+
+### vite.config.js
+
+— конфигурация сборщика Vite.  
+Создаётся автоматически.
+
+Здесь обычно настраивают:
+
+- алиасы путей (`@ → src`)
+- плагины (React)
+- base path для деплоя
+- dev server
+- build options
+
+---
+
+### jsconfig.json / tsconfig.json
+
+— для VS Code: автоподсказки, переход по импортам, понимание алиасов. Создаётся
+вручную.
+
+Без этого файла Vite будет работать, но VS Code не будет автодополнять импорты с
+`@`. Если нужно чтобы VS Code понимал `@/...` и подсказывал пути:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
+[3] Подходы к использованию иконок в React
+
+===== Библиотека `react-icons` =====
+
+Иконки уже как React-компоненты → легко менять `size`, `color`, стилизовать
+через `className`. Не требуется подключать отдельные CSS или шрифты.
+
+```bash
+npm install react-icons
+```
+
+```jsx
+import { FaBeer } from 'react-icons/fa';
+
+<FaBeer size={30} color="orange" />;
+```
+
+===== SVG как компонент =====
+
+Храни SVG в `src/assets/icons/` и импортируй как React-компоненты. Можно менять
+размеры и цвета через пропсы или CSS.
+
+```jsx
+import { ReactComponent as Logo } from './assets/icons/logo.svg';
+
+<Logo width={50} height={50} />;
+```
+
+[4] Нужно ли указывать расширение файла при импорте (React + Vite)
+
+| Что импортируем | Указывать расширение | Пример                                   |
+| --------------- | -------------------- | ---------------------------------------- |
+| React компонент | ❌ Нет               | `import Profile from './Profile'`        |
+| JS / JSX файл   | ❌ Нет               | `import helpers from './helpers'`        |
+| CSS             | ✅ Да                | `import './Profile.css'`                 |
+| CSS Modules     | ✅ Да                | `import css from './Profile.module.css'` |
+| SVG / PNG / JPG | ✅ Да                | `import avatar from './avatar.png'`      |
+| JSON            | ✅ Да                | `import data from './data.json'`         |

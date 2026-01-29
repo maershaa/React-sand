@@ -1,0 +1,44 @@
+.sectionStatistics {
+  padding: 50px;
+  background-color: rgb(227, 210, 237);
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(117, 78, 140);
+  padding: 20px;
+}
+
+.statList {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(100px, 1fr)
+  ); /* Создай столько колонок, сколько помещается.
+Каждая минимум 100px.
+Если есть место — растяни их равномерно. */
+  margin: 0 auto;
+  width: 500px;
+}
+
+.item {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+  height: 100px;
+
+  color: white;
+}
+.label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.percentage {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
