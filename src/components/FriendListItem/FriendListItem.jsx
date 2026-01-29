@@ -9,7 +9,7 @@ const FriendListItem = props => {
   return (
     <li className={css.item}>
       <BiSolidCircle
-        className={`${css.icon} ${isOnline ? css.online : css.offline}`} //! не работает!!
+        className={`${css.icon} ${isOnline ? css.online : css.offline}`}
       />
       {/* <span className={css.status}> {isOnline ? '🟢' : '🔴'} </span> */}
       <img className={css.avatar} src={avatar} alt="User avatar" width="48" />

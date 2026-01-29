@@ -1,16 +1,52 @@
-# React + Vite
+# React sand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простой React-проект с набором переиспользуемых компонентов и CSS Modules.  
+Все компоненты проверяют передаваемые props с помощью **PropTypes**.
 
-Currently, two official plugins are available:
+Проект служит примером организации компонентов в React, использования модульных
+стилей и структурирования данных с JSON.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Компоненты
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Компонент Profile
 
-## Expanding the ESLint configuration
+- отображает информацию о пользователе социальной сети.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Компонент Statistics
+
+- отображает статистику. Может иметь заголовок и элементы с случайным фоном.
+
+### 3. Компонент FriendList
+
+- отображает cписок друзей пользователя с индикатором онлайн/офлайн.
+  Онлайн-индикатор реализован через `react-icons` и CSS.
+
+### 4. Компонент TransactionHistory
+
+- это таблица истории транзакций с чередующимися цветами строк (zebra striping).
+
+---
+
+## Особенности проекта
+
+- CSS Modules для всех компонентов, предотвращает конфликты классов.
+- Проверка типов props через **PropTypes**.
+- Адаптивная верстка и чистый, читаемый React-код.
+- Path aliases через `jsconfig.json` для удобного импорта компонентов:
+- Использование `react-icons` для визуальных индикаторов.
+- Каждый компонент имеет **собственный JS файл** и **CSS Module**.
+
+---
+
+## Технологии
+
+- React 18+
+- CSS Modules
+- PropTypes
+- React Icons (`react-icons@5.5.0`)
+- Vite
+- Path aliases (`jsconfig.json`)
+
+---
