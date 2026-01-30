@@ -6,7 +6,7 @@ const Statistics = props => {
   const { title, stats } = props;
   return (
     <section className={css.sectionStatistics}>
-      {title && <h2 className={css.title}>Upload stats</h2>}
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
         {stats.map(({ id, label, percentage }) => (
@@ -26,9 +26,14 @@ const Statistics = props => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Statistics;

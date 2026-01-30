@@ -1,11 +1,10 @@
-import { BiSolidCircle } from 'react-icons/bi';
-
 import PropTypes from 'prop-types';
 import css from '@/components/FriendListItem/FriendListItem.module.css';
+import { BiSolidCircle } from 'react-icons/bi';
 
 const FriendListItem = props => {
   const { avatar, name, isOnline } = props;
-  console.log(css[isOnline]);
+  // console.log(css[isOnline]);
   return (
     <li className={css.item}>
       <BiSolidCircle
