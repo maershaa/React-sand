@@ -491,3 +491,72 @@ import { ReactComponent as Logo } from './assets/icons/logo.svg';
 | CSS Modules     | ✅ Да                | `import css from './Profile.module.css'` |
 | SVG / PNG / JPG | ✅ Да                | `import avatar from './avatar.png'`      |
 | JSON            | ✅ Да                | `import data from './data.json'`         |
+
+Вот красиво оформленный вариант твоей шпаргалки в **Markdown**, с правильными
+отступами, кодовыми блоками и структурой:
+
+[5] PropTypes (шпаргалка)
+
+**PropTypes** проверяют, какие данные реально приходят в компонент.  
+Если тип не совпадает — React покажет warning в консоли.
+
+> 🔑 PropTypes описывают то, что реально приходит в компонент,  
+> а не то, во что данные потом преобразуются внутри.
+
+---
+
+## Установка
+
+```bash
+npm i prop-types
+```
+
+## Импорт
+
+```js
+import PropTypes from 'prop-types';
+```
+
+## Пример: User.propTypes
+
+```js
+User.propTypes = {
+  // ===== Примитивы =====
+  name: PropTypes.string.isRequired, // строка (обязательная)
+  age: PropTypes.number, // число
+  isOnline: PropTypes.bool, // boolean
+
+  // ===== Массив строк =====
+  tags: PropTypes.arrayOf(PropTypes.string),
+
+  // ===== Массив объектов =====
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      // shape — форма объекта
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool,
+    })
+  ),
+
+  // ===== oneOf (строго один из перечисленных) =====
+  status: PropTypes.oneOf(['online', 'offline', 'busy']),
+
+  // ===== oneOfType (несколько допустимых типов) =====
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  // ===== shape (объект с описанной структурой: строки, булевы значения и т.д.) =====
+  profile: PropTypes.shape({
+    avatar: PropTypes.string,
+    location: PropTypes.string,
+  }),
+
+  // ===== exact (объект БЕЗ лишних полей) =====
+  // exact — как shape, но запрещает лишние поля.
+  // Если придёт больше данных, чем описано в PropTypes, будет warning
+  settings: PropTypes.exact({
+    theme: PropTypes.string,
+    notifications: PropTypes.bool,
+  }),
+};
+```
