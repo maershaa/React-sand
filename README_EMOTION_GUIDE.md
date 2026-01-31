@@ -18,8 +18,11 @@ npm install @emotion/react @emotion/styled
 └─ Component.styled.jsx   # стили через Emotion
 ```
 
-Разрешение файла сос тилями может быть любым из: Component.styled.js
-Component.styled.jsx Component.styled.tsx (если TypeScript)
+Файл со стилями можно назвать с любым из этих расширений:
+
+- `Component.styled.js`
+- `Component.styled.jsx`
+- `Component.styled.tsx` (если используешь TypeScript)п
 
 ---
 
