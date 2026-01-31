@@ -37,6 +37,8 @@
 - Path aliases через `jsconfig.json` для удобного импорта компонентов:
 - Использование `react-icons` для визуальных индикаторов.
 - Каждый компонент имеет **собственный JS файл** и **CSS Module**.
+- **Есть отдельная ветка `emotion-styles`**, в которой все стили реализованы с
+  помощью **Emotion**.
 
 ---
 
@@ -48,5 +50,6 @@
 - React Icons (`react-icons@5.5.0`)
 - Vite
 - Path aliases (`jsconfig.json`)
+- Emotion (в ветке `emotion-styles`)
 
 ---
