@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { getRandomColor } from '@/utils/getRandomColor';
 import {
   SectionStatistics,
   StatisticsTitle,

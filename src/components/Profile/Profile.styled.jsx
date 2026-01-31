@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 const ProfileWrapper = styled.div`
-  background-color: rgb(199, 204, 208);
+  background-color: ${props => props.theme.colors.background.lightGray};
   padding: 60px;
 `;
 
 const Description = styled.div`
-  background-color: rgb(255, 255, 255);
+  background-color: ${props => props.theme.colors.background.white};
   max-width: 500px;
   width: 90%;
   border-top-right-radius: 5px;
@@ -20,13 +20,13 @@ const Avatar = styled.img`
   width: 100%;
   max-width: 200px;
   border-radius: 50%;
-  background-color: antiquewhite;
+  background-color: ${props => props.theme.colors.background.antiquewhite};
 `;
 
 const Name = styled.p`
   font-size: 1.8rem;
   font-weight: 600;
-  color: #000;
+  color: ${props => props.theme.colors.other.black};
 `;
 
 const Tag = styled.p`
@@ -34,13 +34,13 @@ const Tag = styled.p`
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
-  color: #4b4b4b;
+  color: ${props => props.theme.colors.other.darkGray};
 `;
 
 const Location = styled.p`
   font-size: 1.3rem;
   font-weight: 400;
-  color: #4b4b4b;
+  color: ${props => props.theme.colors.other.darkGray};
 `;
 
 const StatsList = styled.ul`
@@ -51,7 +51,7 @@ const StatsList = styled.ul`
 
   margin: 0 auto;
 
-  background-color: #f5f5f5;
+  background-color: ${props => props.theme.colors.background.gray};
 
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -69,13 +69,13 @@ const StatsItem = styled.li`
 
 const Label = styled.span`
   font-size: 0.9rem;
-  color: #555;
+  color: ${props => props.theme.colors.other.grayText};
 `;
 
 const Quantity = styled.span`
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
+  color: ${props => props.theme.colors.other.darkText};
 `;
 
 export {

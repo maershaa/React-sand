@@ -22,8 +22,8 @@ const ListItem = styled.li`
 
     color: ${
       (
-        { isOnline } // передаёv проп isOnline в компонент ListItem
-      ) => (isOnline ? 'rgb(11, 115, 11)' : 'rgb(173, 14, 14)') //Emotion берёт isOnline из пропсов. Проверяет: если true → зелёный, а если false → красный
+        { isOnline, theme } // передаёv проп isOnline в компонент ListItem
+      ) => (isOnline ? theme.colors.other.green : theme.colors.other.red) //Emotion берёт isOnline из пропсов. Проверяет: если true → зелёный, а если false → красный
     };
   }
 `;
@@ -32,7 +32,7 @@ const Avatar = styled.img`
   width: 100%;
   max-width: 100px;
   border-radius: 25%;
-  background-color: antiquewhite;
+  background-color: ${props => props.theme.colors.background.antiquewhite};
 `;
 const UserName = styled.p`
   font-size: 1.8rem;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const TableWrapper = styled.div`
-  background-color: rgb(176, 188, 251);
+  background-color: ${props => props.theme.colors.background.blueLight};
   padding: 40px;
 `;
 
@@ -14,9 +14,9 @@ const TransactionHistoryTable = styled.table`
   border-collapse: collapse;
 
   thead th {
-    background-color: rgb(232, 155, 244);
-    color: white;
-    border: 2px dashed rgb(255, 255, 255);
+    background-color: ${props => props.theme.colors.background.pinkLight};
+    color: ${props => props.theme.colors.other.white};
+    border: 2px dashed ${props => props.theme.colors.other.white};
     padding: 10px;
     text-transform: uppercase;
   }
@@ -30,11 +30,11 @@ const TransactionHistoryTable = styled.table`
   }
 
   tbody tr:nth-child(even) {
-    background-color: lightyellow;
+    background-color: ${props => props.theme.colors.background.yellowLight};
   }
 
   tbody tr:nth-child(odd) {
-    background-color: rgb(176, 230, 251);
+    background-color: ${props => props.theme.colors.background.skyBlue};
   }
 `;
 export { TableWrapper, TransactionHistoryTable };

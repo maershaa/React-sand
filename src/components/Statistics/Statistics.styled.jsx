@@ -11,14 +11,14 @@ export {
 
 const SectionStatistics = styled.section`
   padding: 50px;
-  background-color: rgb(227, 210, 237);
+  background-color: ${props => props.theme.colors.background.lavender};
 `;
 
 const StatisticsTitle = styled.h2`
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 700;
-  color: rgb(117, 78, 140);
+  color: ${props => props.theme.colors.other.purple};
   padding: 20px;
 `;
 
@@ -39,25 +39,25 @@ const StatisticsItem = styled.li`
   align-items: center;
   padding: 10px;
   height: 100px;
-  color: white;
+  color: ${props => props.theme.colors.other.white};
 
-  background-color: ${({ label }) => {
+  background-color: ${({ label, theme }) => {
     //В зависимости от label переданого в компонент StatisticsItem как props - будет разный цвет заднего фона на li
     switch (label) {
       case '.pdf':
-        return '#d975be';
+        return theme.colors.background.pinkLight;
       case '.docx':
-        return '#70b1dc';
+        return theme.colors.background.blue;
       case '.xls':
-        return '#27ae60';
+        return theme.colors.background.green;
       case '.txt':
-        return '#7f8c8d';
+        return theme.colors.background.grayDark;
       case '.mp3':
-        return '#8e44ad';
+        return theme.colors.background.purple;
       case '.psd':
-        return '#67d0cd';
+        return theme.colors.background.teal;
       default:
-        return '#34495e';
+        return theme.colors.background.weryDarkGray;
     }
   }};
 `;
