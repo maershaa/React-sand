@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
-import css from '@/components/FriendListItem/FriendListItem.module.css';
 import { BiSolidCircle } from 'react-icons/bi';
+import {
+  ListItem,
+  Avatar,
+  UserName,
+} from '@/components/FriendListItem/FriendListItem.styled.jsx';
 
 const FriendListItem = props => {
   const { avatar, name, isOnline } = props;
   // console.log(css[isOnline]);
   return (
-    <li className={css.item}>
-      <BiSolidCircle
-        className={`${css.icon} ${isOnline ? css.online : css.offline}`}
-      />
-      {/* <span className={css.status}> {isOnline ? '🟢' : '🔴'} </span> */}
-      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-      <p className={css.name}>{name}</p>
-    </li>
+    <ListItem isOnline={isOnline}>
+      <BiSolidCircle />
+      <Avatar src={avatar} alt={`User ${name} avatar`} width="48" />
+      <UserName>{name}</UserName>
+    </ListItem>
   );
 };
 
