@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
-import css from '@/components/TransactionHistory/TransactionHistory.module.css';
+import {
+  TableWrapper,
+  TransactionHistoryTable,
+} from '@/components/TransactionHistory/TransactionHistory.styled.jsx';
 
 const TransactionHistory = props => {
   const { items } = props;
   return (
-    <div className={css.tableWrapper}>
-      <table className={css.transactionHistory}>
+    <TableWrapper>
+      <TransactionHistoryTable>
         <thead>
           <tr>
             <th>Type</th>
@@ -23,8 +26,8 @@ const TransactionHistory = props => {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </TransactionHistoryTable>
+    </TableWrapper>
   );
 };
 
