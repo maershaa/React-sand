@@ -1,4 +1,5 @@
-*,
+/* ! Нет необходимости так как мы используем Emotion и скидываем стили при помощи ${emotionReset} в GlobalStyles комопненте */
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -36,4 +37,4 @@ button,
 textarea,
 select {
   font: inherit;
-}
+} */

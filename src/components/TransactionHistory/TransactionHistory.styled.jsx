@@ -28,12 +28,12 @@ const TransactionHistoryTable = styled.table`
     font-size: 1rem;
     font-weight: 400;
   }
-
-  tbody tr:nth-child(even) {
+  tbody tr:nth-of-type(even) {
+    //можно nth-child(even) но ругается так как при SSR (Next.js и т.п.) nth-child может дать разные результаты между сервером и браузером. потому используем nth-of-type(even)
     background-color: ${props => props.theme.colors.background.yellowLight};
   }
 
-  tbody tr:nth-child(odd) {
+  tbody tr:nth-of-type(odd) {
     background-color: ${props => props.theme.colors.background.skyBlue};
   }
 `;
