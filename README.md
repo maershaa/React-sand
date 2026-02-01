@@ -39,6 +39,8 @@
 - Каждый компонент имеет **собственный JS файл** и **CSS Module**.
 - **Есть отдельная ветка `emotion-styles`**, в которой все стили реализованы с
   помощью **Emotion**.
+- **Есть отдельная ветка ветка `styled-components`**, где все стили реализованы
+  с помощью **styled-components**.
 
 ---
 
@@ -51,5 +53,8 @@
 - Vite
 - Path aliases (`jsconfig.json`)
 - Emotion (в ветке `emotion-styles`)
+- Styled Components (в ветке `styled-components`)
 
 ---
+
+### В каждой ветке проекта (`emotion-styles` и `styled-components`) есть **свой файл README**, где кратко описано использование соответствующей библиотеки стилей.
